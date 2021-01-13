@@ -10,11 +10,16 @@ const Enlace= styled(Link)`
     text-decoration:none;
 `;
  
-const Header = () => {
+const Footer = () => {
+
+    const year = new Date().getFullYear();
+
     return ( 
-        <header 
+        <>
+        <footer 
             css={css`
                 background-color: rgba(44,62,80);
+                margin-top: 5rem;
                 padding:1rem;
             `}>
             <div
@@ -29,14 +34,24 @@ const Header = () => {
                     }
                 `}
             >
+                <Navegacion/>
+
                 <Enlace to={'/'}>
                     <h1>Hotel 3 Sueños</h1>
                 </Enlace>
-
-                <Navegacion/>
             </div>
-        </header>
+        </footer>
+        <p
+            css={css`
+            text-align:center;
+            color: #fff;
+            background-color:rgb(33,44,55);
+            margin:0;
+            padding:1rem;
+            `}
+        >Hotel 3 Sueños. Todos los derechos reservados {year} &copy;</p>
+        </>
      );
 }
  
-export default Header;
+export default Footer;
